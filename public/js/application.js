@@ -7,10 +7,10 @@ $(document).ready(function() {
       });
   });
 $(document).keydown(function(e) {
-    if (e.keyCode == 37 || 39) {
+    if (e.keyCode == 37 || e.keyCode == 39) {
         $.get("/cats/new")
         .done(function(response) {
-        $("#cat-space").html(response)
+        $("#cat-space").html($(response).children()[0])
       });
     }
 });
